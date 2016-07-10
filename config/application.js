@@ -51,6 +51,17 @@ module.exports = function(lineman) {
      * Task Configuration
      */
 
+    clean: {
+        ng2: {
+            "generated": {
+                src: "<%= files.ng2.generated %>" + "/*",
+                options: {
+                    force: true
+                }
+            }
+        }
+    },
+
     // Added this to fix the following error:
     // Warning: Path must be a string. Received null Use --force to continue.
     // found out about this error here: https://github.com/jshint/jshint/issues/2922
