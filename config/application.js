@@ -50,18 +50,6 @@ module.exports = function(lineman) {
         /*
          * Task Configuration
          */
-
-        clean: {
-            ng2: {
-                "generated": {
-                    src: "<%= files.ng2.generated %>" + "/*",
-                    options: {
-                        force: true
-                    }
-                }
-            }
-        },
-
         copy: {
             ng2_css_generated: {
                 // See Copy files to different directory (https://github.com/gruntjs/grunt-contrib-copy/issues/58)
@@ -105,11 +93,11 @@ module.exports = function(lineman) {
                 src: ["<%= files.ng2.css %>", "<%= files.ng2.html %>"], //todo consolidate
                 dest: "<%= files.ng2.dist %>"
             },
-            systemjs_to_dist: {
+            systemjs_dist: {
                 src: "systemjs.config.js",
                 dest: "<%= files.ng2.systemjs.dist %>"
             },
-            systemjs_to_generated: {
+            systemjs_generated: {
                 src: "systemjs.config.js",
                 dest: "<%= files.ng2.systemjs.generated %>"
             }
@@ -188,7 +176,7 @@ module.exports = function(lineman) {
         * Workflow configuration
         */
         prependTasks: {
-            common: "clean:ng2:generated".concat(lineman.config.application.prependTasks.common).concat(["ts:ng2:generated"]),
+            common: lineman.config.application.prependTasks.common.concat(["ts:development"]),
             dev: ["copy:ng2_other_generated", "copy:ng2_libs_generated"].concat(lineman.config.application.prependTasks.dev),
             dist: ["copy:ng2_other_dist", "copy:ng2_libs_dist"].concat(lineman.config.application.prependTasks.dev)
         }
