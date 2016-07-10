@@ -1,0 +1,42 @@
+{
+  "name": "lineman-angular2-template",
+  "title": "An HTML/JS/CSS app using Angular 1 and Angular 2",
+  "homepage": "https://github.com/RodrigoMattosoSilveira/lineman-angular2-template/wiki",
+  "version": "0.0.1",
+  "private": true,
+  "author": {
+    "name": "Rodrigo Silveira",
+    "email": "rodrigomattososilveira@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RodrigoMattosoSilveira/lineman-angular2-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RodrigoMattosoSilveira/lineman-angular2-template/issues"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.6.3",
+    "jasmine-given": "^2.6.2",
+    "lineman": "^0.34.0",
+    "lineman-angular": "^0.3.0",
+    "lineman-less": "0.0.1",
+    "protractor": "^1.4.0"
+  },
+  "scripts": {
+    "start": "lineman run",
+    "test": "lineman spec-ci"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  ],
+  "keywords": [
+    "lineman",
+    "angular",
+    "angular1",
+    "angular2"
+  ]
+}
