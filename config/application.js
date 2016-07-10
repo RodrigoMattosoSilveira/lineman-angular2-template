@@ -43,8 +43,22 @@ module.exports = function(lineman) {
         //   host: 'localhost',
         //   port: 3000
         // }
-    }
+    },
+
     loadNpmTasks: lineman.config.application.loadNpmTasks.concat("grunt-contrib-copy", "grunt-contrib-clean", "grunt-ts"),
+
+    /*
+     * Task Configuration
+     */
+
+    // Added this to fix the following error:
+    // Warning: Path must be a string. Received null Use --force to continue.
+    // found out about this error here: https://github.com/jshint/jshint/issues/2922
+    jshint: {
+        options: {
+            reporterOutput: ""
+        }
+    },
 
     // Sass
     //
