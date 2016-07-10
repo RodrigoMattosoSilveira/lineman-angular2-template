@@ -12,32 +12,39 @@
  *   $ lineman config concat.js #=> to see the JS config for the concat task.
  */
 module.exports = function(lineman) {
-  //Override application configuration here. Common examples follow in the comments.
-  return {
-    // grunt-angular-templates assumes your module is named "app", but
-    // you can override it like so:
-    //
-    // ngtemplates: {
-    //   options: {
-    //     module: "myModuleName"
-    //   }
-    // }
+    //Override application configuration here. Common examples follow in the comments.
+
+    // DO NOT REMOVE
+    var app = lineman.config.application;
+
+
+    return {
+        // grunt-angular-templates assumes your module is named "app", but
+        // you can override it like so:
+        //
+        // ngtemplates: {
+        //   options: {
+        //     module: "myModuleName"
+        //   }
+        // }
+
 
     server: {
-      pushState: true
-      // API Proxying
-      //
-      // During development, you'll likely want to make XHR (AJAX) requests to an API on the same
-      // port as your lineman development server. By enabling the API proxy and setting the port, all
-      // requests for paths that don't match a static asset in ./generated will be forwarded to
-      // whatever service might be running on the specified port.
-      //
-      // apiProxy: {
-      //   enabled: true,
-      //   host: 'localhost',
-      //   port: 3000
-      // }
+        pushState: true
+        // API Proxying
+        //
+        // During development, you'll likely want to make XHR (AJAX) requests to an API on the same
+        // port as your lineman development server. By enabling the API proxy and setting the port, all
+        // requests for paths that don't match a static asset in ./generated will be forwarded to
+        // whatever service might be running on the specified port.
+        //
+        // apiProxy: {
+        //   enabled: true,
+        //   host: 'localhost',
+        //   port: 3000
+        // }
     }
+    loadNpmTasks: lineman.config.application.loadNpmTasks.concat("grunt-contrib-copy", "grunt-contrib-clean", "grunt-ts"),
 
     // Sass
     //
@@ -55,5 +62,5 @@ module.exports = function(lineman) {
     //
     // enableAssetFingerprint: true
 
-  };
+    };
 };

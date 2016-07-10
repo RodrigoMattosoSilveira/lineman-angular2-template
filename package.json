@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "coffee-script": "^1.6.3",
+    "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-copy": "^1.0.0",
     "jasmine-given": "^2.6.2",
     "lineman": "^0.36.0",
