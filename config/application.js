@@ -45,7 +45,7 @@ module.exports = function(lineman) {
             // }
         },
 
-        loadNpmTasks: lineman.config.application.loadNpmTasks.concat("grunt-contrib-copy", "grunt-contrib-clean", "grunt-ts"),
+        loadNpmTasks: lineman.config.application.loadNpmTasks.concat("grunt-contrib-copy", "grunt-ts"),
 
         /*
          * Task Configuration
