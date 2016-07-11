@@ -1,13 +1,13 @@
-# A Lineman JS Template using Angular2
+# A Lineman JS Template using Angular2 - lineman-angular2-template
+
+[![Build Status](https://travis-ci.org/RodrigoMattosoSilveira/lineman-angular2-template.svg?branch=master)](https://travis-ci.org/RodrigoMattosoSilveira/lineman-angular2-template)
 
 ## Introduction
-This plugin enhances the original  [lineman-angular](https://github.com/linemanjs/lineman-angular) plugin to support [Angular 2](https://angular.io/). Using this plugin you can build pure Angular 1, hybrid [Angular 1](https://angularjs.org/)/ [Angular 2](https://angular.io/), and pure [Angular 2](https://angular.io/) applications.
+This is a project template for Angular 1 and Angular 2 applications using [Lineman](http://www.linemanjs.com). It dependes on the [lineman-angular](https://github.com/linemanjs/lineman-angular) and https://github.com/RodrigoMattosoSilveira/lineman-angular2 plugins. 
 
-[![Build Status](https://travis-ci.org/linemanjs/lineman-angular-template.png?branch=master)](https://travis-ci.org/linemanjs/lineman-angular-template)
+It was built based on [lineman-angular-template](https://github.com/linemanjs/lineman-angular-template), enabling you to build pure Angular 1, hybrid [Angular 1](https://angularjs.org/)/ [Angular 2](https://angular.io/), and pure [Angular 2](https://angular.io/) applications.
 
-This is a project template for Angular 1 and Angular 2 applications using [Lineman](http://www.linemanjs.com). 
-
-It was built based on [lineman-angular-template](https://github.com/linemanjs/lineman-angular-template).
+## Angular 1 and Angular 2
 
 [Angular 2](https://angular.io/) is quite different from [Angular 2](https://angular.io/), with some of these differences having a direct impact on how hybrid Angular 1/ Angular 2, and pure Angular 2 applications are built:
 
