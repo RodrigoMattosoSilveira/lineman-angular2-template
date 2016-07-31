@@ -15,6 +15,7 @@ import "rxjs/Rx";
 //    templateUrl: "ng2/ng2app/template.html", // does not work with the router!
     template: `
         <h1 class="dlabs-ng2">NG2 App</h1>
+        <h4>This is work in progress; being enhanced to fully reflect its sister, lineman-angular-template</h4>
         <router-outlet></router-outlet>
     `,
     styleUrls: ["ng2/ng2app/styles.css"],
