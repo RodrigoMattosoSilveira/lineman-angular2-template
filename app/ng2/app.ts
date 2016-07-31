@@ -1,29 +1,15 @@
-// code/conversion/hybrid/ts/app.ts
 
-import { UpgradeAdapter } from "@angular/upgrade";
-import * as angular from "@angular/upgrade/src/angular_js";
-import "interestAppNg1"; // "bare import" for side-effects
+import { bootstrap }    from "@angular/platform-browser-dynamic";
+import {disableDeprecatedForms, provideForms} from "@angular/forms";
+import { HTTP_PROVIDERS } from "@angular/http";
 
-/*
- * Create our upgradeAdapter
- */
-const upgradeAdapter: UpgradeAdapter = new UpgradeAdapter();
+import { APP_ROUTER_PROVIDERS } from "./app_routes";
+import { Ng2App } from "./ng2app/ng2app";
 
-// Load the NG1 application
-let app = angular.module("app");
-
-// convert NG2 ComponentTwo to work on NG1
-import {ComponentOne} from "./componentOne/componentOne";
-app.directive("componentOne",
-    upgradeAdapter.downgradeNg2Component(ComponentOne));
-
-// convert tNG2 ComponentOne to work on NG1
-import {ComponentTwo} from "./componentTwo/componentTwo";
-app.directive("componentTwo",
-    upgradeAdapter.downgradeNg2Component(ComponentTwo));
-
-
-/*
-* Bootstrap the NG2 App
-*/
-upgradeAdapter.bootstrap(document.body, ["app"]);
+bootstrap(Ng2App, [
+        APP_ROUTER_PROVIDERS,
+        HTTP_PROVIDERS,
+        disableDeprecatedForms(),
+        provideForms(),
+    ]
+).catch(err => console.error(err));

@@ -6,6 +6,9 @@
  *   - https://github.com/linemanjs/lineman/blob/master/config/files.coffee
  */
 module.exports = function(lineman) {
+    // DO NOT REMOVE
+    var files = lineman.config.files;
+
     //Override file patterns here
     return {
         js: {
@@ -25,6 +28,9 @@ module.exports = function(lineman) {
                     paths: ["vendor/css/normalize.css", "vendor/css/**/*.css", "app/css/**/*.less"]
                 }
             }
+        },
+        ng2: {
+            libs: files.ng2.libs.concat("node_modules/bootstrap/**")
         }
     };
 };

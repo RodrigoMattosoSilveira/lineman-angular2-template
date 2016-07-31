@@ -5,38 +5,44 @@
         "app":                        "app",
         "rxjs":                       "node_modules/rxjs",
         "@angular":                   "node_modules/@angular",
-        "angular2-in-memory-web-api": "node_modules/angular2-in-memory-web-api",
-        "interestAppNg1":             "js/app.js"
+        "angular2-in-memory-web-api": "node_modules/angular2-in-memory-web-api"
     };
 
     // packages tells the System loader how to load when no filename and/or no extension
     var packages = {
-        rxjs: {
-            defaultExtension: "js"
-        },
-        "angular2-in-memory-web-api": {
-            main: "index.js",
-            defaultExtension: "js"
-        }
+        app:                          {defaultExtension: "js", main: "app.js"},
+        rxjs:                         {defaultExtension: "js"},
+        "angular2-in-memory-web-api": {defaultExtension: "js", main: "index.js"}
     };
 
-    var packageNames = [
-        "@angular/common",
-        "@angular/compiler",
-        "@angular/core",
-        "@angular/http",
-        "@angular/platform-browser",
-        "@angular/platform-browser-dynamic",
-        "@angular/router",
-        "@angular/router-deprecated",
-        "@angular/testing",
-        "@angular/upgrade"
+    var ngPackageNames = [
+        "common",
+        "compiler",
+        "core",
+        "forms",
+        "http",
+        "platform-browser",
+        "platform-browser-dynamic",
+        "router",
+        "router-deprecated",
+        "testing",
+        "upgrade"
     ];
 
-    // add package entries for angular packages in the form "@angular/common": { main: "index.js", defaultExtension: "js" }
-    packageNames.forEach(function(pkgName) {
-        packages[pkgName] = { main: "index.js", defaultExtension: "js" };
-    });
+    // Individual files (~300 requests):
+    function packIndex(pkgName) {
+        packages["@angular/"+pkgName] = { main: "index.js", defaultExtension: "js" };
+    }
+
+    // Bundled (~40 requests):
+    function packUmd(pkgName) {
+        packages["@angular/"+pkgName] = { main: "/bundles/" + pkgName + ".umd.js", defaultExtension: "js" };
+    }
+
+    // Most environments should use UMD; some (Karma) need the individual index files
+    var setPackageConfig = System.packageWithIndex ? packIndex : packUmd;
+    // Add package entries for angular packages
+    ngPackageNames.forEach(setPackageConfig);
 
     var paths = {
         underscore: "./node_modules/underscore/underscore.js"
