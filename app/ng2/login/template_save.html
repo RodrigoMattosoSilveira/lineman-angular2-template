@@ -1,0 +1,200 @@
+<!--
+  ~ $Copyright (C)2015 Dematic Corp.
+  ~ This software contains confidential information, trade secret information and/or
+  ~ know-how which is the property of Dematic Corp. This software is furnished under
+  ~ license and may be used only in accordance with the terms of such license and
+  ~ with the inclusion of the above copyright notice. This software may not be
+  ~ provided or otherwise made available to any other person or party. No title to
+  ~ or ownership of the software is hereby transferred.$
+  ~ -------------------------------------------------------
+  ~
+  ~ Revision Information:
+  ~     $Author: $
+  ~     $Id: $
+  ~     $Revision: $
+  ~     $Date: $
+  ~     $HeadURL: $
+  -->
+
+<h1 class="dlabs-ng2">Login Screen</h1>
+<div class="panel panel-default user-authentication" dl-header-show-all='true'>
+    <div class="panel-body">
+
+        <form class="form-horizontal"
+              (ngSubmit)="onSubmit()"
+              #thisForm="ngForm"
+              novalidate
+              autocomplete="off"
+              autocomplete="false">
+            <div class="form-group" *ngIf="!tenantQueryParam">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-home"></i>
+                    </span>
+                    <input  type="text"
+                            class='form-control'
+                            placeholder="Tenant"
+                            [(ngModel)]="model.tenant"
+                            name="tenant" #tenant="ngModel"
+                            required/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                    <input  type="text"
+                            class='form-control'
+                            placeholder="Username (email)"
+                            [(ngModel)]="model.username"
+                            name="username"  #username="ngModel"
+                            required/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-lock"></i>
+                    </span>
+                    <input type="password"
+                           class='form-control'
+                           placeholder="Password"
+                           [(ngModel)]="model.password"
+                           name="password" #password="ngModel"
+                           required/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2x">
+                    <button type="submit"
+                            name="signin"
+                            class="btn button-adjustment"
+                            [ngClass]="{valid: thisForm.valid, disabled: !thisForm.valid}"
+                            [disabled]="!thisForm.valid">
+                        <img src="img/spinning-wheel.gif"
+                             [ngClass]="{authorizing: authorizing}"
+                             *ngIf="authorizing"
+                        />Sign in
+                    </button>
+                </div>
+            </div>
+            <!-- div [hidden]="(tenant.pristine && username.pristine && password.pristine) ||
+                           (tenant.valid && username.valid && password.valid) ">
+                There is an error!
+            </div -->
+
+            <div>
+                <h3>Debug Section</h3>
+                <div>The whole model: {{diagnostic}}</div>
+                <div>Tenant: {{model.tenant}}, tenantQueryParm: {{tenantQueryParam}}</div>
+                <div>User name: {{model.username}}</div>
+                <div>Password: {{model.password}}</div>
+                <div>Form value: {{thisForm.value | json}}</div>
+                <div>Form: {{thisForm.valid}}</div>
+                <div>Form: {{thisForm.tenant}}</div>
+            </div>
+            <!--
+           <div class="form-group">
+                <div class="col-sm-offset-2x">
+                    <button type="submit"
+                            name="signin"
+                            class="btn button-adjustment">
+                        <img src="img/spinning-wheel.gif"
+                             class='spinner'
+                             *ngIf="authorizing"
+                             />Sign in
+                    </button>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2x">
+                    <button type="submit"
+                            name="signin"
+                            class="btn button-adjustment"
+                            ng-class="ready"
+                            ng-disabled="authorizing"
+                            dl-authentication-spinner >
+                            <img src="img/spinning-wheel.gif"
+                                 class='spinner'
+                                 ng-show='showSpinner'/>Sign in
+                    </button>
+                </div>
+            </div>
+
+             <div class="form-group">
+                 <div class="col-sm-offset-2x">
+                     <button type="submit" class="btn btn-default" [disabled]="!thisForm.form.valid">Submit</button>
+                 </div>
+             </div>
+             <div [hidden]="thisForm.form.valid || thisForm.form..pristine" class="alert alert-danger">
+                 <div [hidden]="tenant.valid || tenant.pristine" class="alert alert-danger">
+                     <small [hidden]="!thisForm.form.tenant.$error.required">
+                         Tenant is required.<br/>
+                     </small>
+                 </div>
+                 <div [hidden]="tenant.username || tenant.username" class="alert alert-danger">
+                     <small [hidden]="!thisForm.form.username.$error.required">
+                         Username is required.<br/>
+                     </small>
+                     <small [hidden]="!thisForm.form.username.$error.minlength">
+                         Username must be at least 5 characters.<br/>
+                     </small>
+                     <small [hidden]="!thisForm.form.username.$error.email">
+                         Username must be your email.<br/>
+                     </small>
+                     <small [hidden]="!thisForm.form.username.$error.maxlength">
+                         Username cannot be longer than 16 characters.<br/>
+                     </small>
+                 </div>
+             </div>
+             -->
+            <!--
+            <div class="error-container error-border"
+                 ng-show="((aform.username.$touched && aform.username.$invalid) ||
+                           (aform.password.$touched && aform.password.$invalid) ||
+                           (aform.tenant.$touched   && aform.tenant.$invalid))"
+                 name='client-errors'>
+                <div ng-show="aform.tenant.$touched">
+                    <small class="ng-hide" dl-error-message dl-invalid={{aform.tenant.$error.required}}>
+                        Tenant is required.<br/>
+                    </small>
+                </div>
+                <div ng-show="aform.username.$touched">
+                    <small class="ng-hide" dl-error-message dl-invalid={{aform.username.$error.required}}>
+                        Username is required.<br/>
+                    </small>
+                    <small class="ng-hide" dl-error-message dl-invalid={{aform.username.$error.minlength}}>
+                        Username must be at least 5 characters.<br/>
+                    </small>
+                    <small class="ng-hide" dl-error-message dl-invalid={{aform.username.$error.email}}>>
+                        Username must be your email.<br/>
+                    </small>
+                    <small class="ng-hide" dl-error-message dl-invalid={{aform.username.$error.maxlength}}>>
+                        Username cannot be longer than 30 characters.<br/>
+                    </small>
+                </div>
+                <div ng-show="aform.password.$touched">
+                    <small class="ng-hide" dl-error-message dl-invalid={{aform.password.$error.required}}>
+                        Password is required.<br/>
+                    </small>
+                    <small class="ng-hide" dl-error-message dl-invalid={{aform.password.$error.minlength}}>
+                        Password must be longer than 8 characters. <br/>
+                    </small>
+                    <small class="ng-hide" dl-error-message dl-invalid={{aform.password.$error.maxlength}}>
+                        Password cannot be longer than 30 characters.<br/>
+                    </small>
+                </div>
+            </div>
+            -->
+            <!--
+            <div class="error-container error-border-unauthorized" ng-show="unauthorized"
+                 name='server-errors'>
+                <small class="dl-error">
+                    Unauthorized.<br/>
+                </small>
+            </div>
+            -->
+        </form>
+    </div>
+</div>
