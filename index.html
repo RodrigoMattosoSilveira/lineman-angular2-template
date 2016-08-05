@@ -10,12 +10,12 @@
         <title>Lineman NG2 Template</title>
         <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css" media="all" />
         <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap-theme.css" media="all" />
-        <link rel="stylesheet" type="text/css"  href="css/app.css" media="all" />
-        <link rel="icon"       type="image/png" sizes="96x96" href="app/img/favicon.ico">
+        <link rel="stylesheet" type="text/css"  href="app/app.css" media="all" />
+        <link rel="icon"       type="image/png" sizes="96x96" href="img/favicon_silveira_3.jpeg">
     </head>
     <body>
 
-        <ng2-app>Loading ...</ng2-app>
+        <main-app>Loading ...</main-app>
 
         <!-- 1. Load libraries -->
         <!-- Polyfill(s) for older browsers  -->
@@ -30,7 +30,7 @@
 
         <!-- 3. Display the application -->
         <script>
-        System.import('bootstrap.js')
+        System.import('app/bootstrap.js')
             .then(null, console.error.bind(console));
         </script>
     </body>
