@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "lineman": "^0.36.4",
-    "lineman-angular2": "^0.0.4",
+    "lineman-angular2": "^0.0.5",
     "lineman-less": "0.0.1",
 
     "grunt": "^0.4.5",
