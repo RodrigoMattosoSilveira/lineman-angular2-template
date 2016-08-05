@@ -1,7 +1,7 @@
 import { provideRouter, RouterConfig } from "@angular/router";
 
-import {LoginComponent} from "./login/loginComponent";
-import {HomeComponent} from "./home/homeComponent";
+import {LoginComponent} from "./loginComponent/loginComponent";
+import {HomeComponent} from "./homeComponent/homeComponent";
 
 const routes: RouterConfig = [
     { path: "login", component: LoginComponent },
