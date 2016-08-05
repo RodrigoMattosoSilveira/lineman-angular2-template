@@ -37,6 +37,11 @@ module.exports = function(lineman) {
       //   host: 'localhost',
       //   port: 3000
       // }
+    },
+
+    removeTasks: {
+      common: ["coffee","less", "jshint", "handlebars", "jst", "concat_sourcemap", "copy:dev", "webfonts:dev", "pages:dev"],
+      dist: ["uglify", "cssmin", "copy:dist", "images:dist", "webfonts:dist", "pages:dist"]
     }
 
     // Sass
