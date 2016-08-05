@@ -2,7 +2,7 @@
   "name": "lineman-angular2-template",
   "title": "An Angular 2 template app",
   "homepage": "https://github.com/RodrigoMattosoSilveira/lineman-angular2-template/wiki",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "private": true,
   "author": {
     "name": "Rodrigo Silveira",
@@ -18,7 +18,6 @@
   "devDependencies": {
     "lineman": "^0.36.4",
     "lineman-angular2": "^0.0.5",
-    "lineman-less": "0.0.1",
 
     "grunt": "^0.4.5",
     "grunt-contrib-clean": "^0.6.0",
