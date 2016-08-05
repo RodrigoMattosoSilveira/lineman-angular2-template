@@ -48,7 +48,7 @@ input:not(:focus).ng-touched.ng-invalid {
 input:focus {
     border-style: solid;
     border-width: thin;
-    border-colorr: #4D90FE;
+    border-color: #4D90FE;
 }
 
 /* *****************************************************************************

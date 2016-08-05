@@ -9,8 +9,8 @@ import {AuthenticatedUser} from "../entities/AuthenticatedUser";
 
 @Component({
     selector: "login",
-    templateUrl: "login/login.html",
-    styleUrls: ["login/main.css"],
+    templateUrl: "app/loginComponent/loginComponent.html",
+    styleUrls: ["app/loginComponent/loginComponentt.css"],
     directives: [REACTIVE_FORM_DIRECTIVES],
     providers: [AuthenticationService]
 })

@@ -1,8 +1,8 @@
 import { Component } from "@angular/core";
 import { ROUTER_DIRECTIVES } from "@angular/router";
 
-import {LoginComponent} from "../login/loginComponent";
-import {HomeComponent} from "../home/homeComponent";
+import {LoginComponent} from "../loginComponent/loginComponent";
+import {HomeComponent} from "../homeComponent/homeComponent";
 import "rxjs/Rx";
 
 /*
@@ -12,16 +12,16 @@ import "rxjs/Rx";
 
 @Component({
     selector: "main-app",
-//    templateUrl: "main/main.html", // does not work with the router!
+//    templateUrl: "mainComponent/mainComponent.html", // does not work with the router!
     template: `
         <h1 class="dlabs-ng2">NG2 App</h1>
         <h4>This is work in progress; being enhanced to fully reflect its sister, lineman-angular-template</h4>
         <router-outlet></router-outlet>
     `,
-    styleUrls: ["main/main.css"],
+    styleUrls: ["app/mainComponent/mainComponent.css"],
     directives: [ROUTER_DIRECTIVES],
     precompile: [LoginComponent, HomeComponent]
 })
-export class Main {
+export class MainComponent {
 }
 

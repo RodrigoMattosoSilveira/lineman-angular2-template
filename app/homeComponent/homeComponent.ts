@@ -2,8 +2,8 @@ import { Component, OnInit } from "@angular/core";
 
 @Component({
     selector: "home",
-    templateUrl: "home/main.html",
-    styleUrls: ["home/login.css"]
+    templateUrl: "app/homeComponent/homeComponent.html",
+    styleUrls: ["app/homeComponent/homeComponent.css"]
 })
 export class HomeComponent  implements OnInit {
 
