@@ -2,7 +2,15 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [0.0.4] - unreleased
+## [0.0.5] - Unreleased
+### Updated
+* Bumped the version
+* Removed lineman-less v0.0.1 dependency
+
+### Updated
+#### Changed the file structure to reflect a pure Angular 2 development environment
+
+## [0.0.4] - 2016-08-05
 ### Added
 * Add unit and end to end test samples
 * Add the elements of the original lineman-angular-template app
