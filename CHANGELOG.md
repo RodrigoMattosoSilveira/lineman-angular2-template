@@ -2,7 +2,14 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [0.0.5] - Unreleased
+## [0.0.7] - 2016 08 06
+### Updated
+* Bumped the version
+* Updated it to depend on [lineman-angular2](https://www.npmjs.com/package/lineman-angular2) v0.0.7
+
+## [0.0.6] - SKIPPED
+
+## [0.0.5] - 2016 08 05
 ### Updated
 * Bumped the version
 * Removed lineman-less v0.0.1 dependency

@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "lineman": "^0.36.4",
-    "lineman-angular2": "^0.0.5",
+    "lineman-angular2": "^0.0.7",
 
     "grunt": "^0.4.5",
     "grunt-contrib-clean": "^0.6.0",
